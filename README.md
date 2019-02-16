@@ -10,8 +10,19 @@ source ~/.bashrc
 ```
 
 # How to use
-
+## make grid map
 ```
-gridnetgen.sh
-runner.py gridmap
+./gridnetgen.sh
+```
+
+## run simple simulation
+```
+./runner.py gridmap
+# or
+./runner.sh gridmap
+```
+
+## plot net speed
+```
+./plot_net_speed.sh
 ```
