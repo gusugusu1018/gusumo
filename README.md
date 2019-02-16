@@ -26,3 +26,19 @@ source ~/.bashrc
 ```
 ./plot_net_speed.sh
 ```
+
+# MEMO
+map.net.xml
+```
+...
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,60.00,60.00" origBoundary="0.00,0.00,60.00,60.00" projParameter="!"/>
+...
+```
+convBoundary is important
+
+you use this number in plot\_net\_speed.py
+```
+...
+ --xlim 0,60 --ylim 0,60 \
+...
+```
