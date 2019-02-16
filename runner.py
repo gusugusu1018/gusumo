@@ -11,10 +11,13 @@ import os
 import datetime
 
 ## Get Environment information
-SUMO_HOME=os.environ.get('SUMO_HOME',os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..'))
-TOOLS_PATH=os.path.join(SUMO_HOME,'tools')
-BIN_PATH=os.path.join(SUMO_HOME,'bin')
-sys.path.append(TOOLS_PATH)
+if 'SUMO_HOME' in os.environ:
+   SUMO_PATH=os.environ['SUMO_HOME']
+   TOOLS_PATH=os.path.join(SUMO_PATH, 'tools')
+   BIN_PATH=os.path.join(SUMO_PATH,'bin')
+   sys.path.append(TOOLS_PATH)
+else:   
+   sys.exit("please declare environment variable 'SUMO_HOME'")
 
 ## Set Argument Parser
 parser = argparse.ArgumentParser(description='script for sumo') 
@@ -25,7 +28,7 @@ parser.add_argument('-e','--endtime',type=str,default='2000',help='set simulatio
 args = parser.parse_args()
 
 MAP_DIR=str(args.mapdirectory)
-print('sumo home       : '+SUMO_HOME)
+print('sumo home       : '+SUMO_PATH)
 print('bin path        : '+BIN_PATH)
 print('tools path      : '+TOOLS_PATH)
 print('using directory : '+MAP_DIR) 
