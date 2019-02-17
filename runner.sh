@@ -1,8 +1,8 @@
 #!/bin/bash
-## filename sumo.sh
-## author   Yuji Ogusu
-## date     2019/02/16
-## license  MIT
+
+# @ filename runner.sh
+# @ author   Yuji Ogusu
+# @ date     2019/02/16
 
 set -e
 
@@ -24,7 +24,7 @@ _EOT_
         exit 1
 }
 
-TOOLS_DIR=/usr/share/sumo/tools
+TOOLS_DIR=$SUMO_HOME/tools
 END_TIME=2000
 USE_GUI=false
 

@@ -62,7 +62,7 @@ pip install rtree
 # How to SUMO?
 It is difficult to use SUMO, if you first try.
 
-There are 4 steps.
+There are 3 steps.
 
 ## Index
 ### 1. Prepare Map
@@ -71,10 +71,11 @@ There are three method.
 * OpenStreatMap
 * netedit
 ### 2. Demand Modeling
+#### create trips
 * random Trips
-### 3. Route generate
+#### Route generate
 * duarouter
-### 4. Simulation
+### 3. Simulation
 * sumo
 * sumo-gui
 # 1. Prepare Map
@@ -105,6 +106,10 @@ netgenerate has three types map.
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_randommap.png" width="640">
 
 ## OpenStreatMap
+```
+osmWebWizard.sh
+```
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/osmWebWizard.png" width="640">
 
 ## MEMO
 map.net.xml

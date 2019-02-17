@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# @ filename gridnetgen.sh
+# @ author   Yuji Ogusu
+# @ date     2019/02/17
+
 mkdir gridmap
 netgenerate --grid \
 	--grid.length 100 \

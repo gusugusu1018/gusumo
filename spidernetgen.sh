@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# @ filename spidernetgen.sh
+# @ author   Yuji Ogusu
+# @ date     2019/02/17
+
 mkdir spidermap
 netgenerate --spider \
     --spider.arm-number 5 \

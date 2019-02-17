@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# @ filename plot_net_speed.sh
+# @ author   Yuji Ogusu
+# @ date     2019/02/17
+
 $SUMO_HOME/tools/visualization/plot_net_speeds.py -n gridmap/map.net.xml \
  --edge-width .5 -o speeds.png \
  --minV 0 --maxV 60 --xticks 16 --yticks 16 \
