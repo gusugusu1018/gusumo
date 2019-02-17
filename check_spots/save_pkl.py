@@ -14,6 +14,7 @@ def main():
     tag = "convenience"
     prefs = "New York"
     api = overpy.Overpass()
+    #"node(50.745,7.17,50.75,7.18);out;"
     query = (
         'area["name"~"{prefs}"];\n'
         'node(area)["{key}"="{tag}"];\n'
