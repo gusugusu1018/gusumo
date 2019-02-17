@@ -46,7 +46,7 @@ pip install rtree
 ```
 ./draw_net.py -n gridmap/map.net.xml
 ```
-![draw_gridmap](https://github.com/minaminoki/gusumo/tree/master/img/draw_gridmap.png "gridmap")
+![draw_gridmap](https://github.com/minaminoki/gusumo/tree/master/img/draw_gridmap.png)
 ## run simple simulation
 ```
 ./runner.py gridmap
