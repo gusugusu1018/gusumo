@@ -4,6 +4,9 @@
 # @ author   Yuji Ogusu
 # @ date     2019/02/17
 
+if [ -d ./gridmap ]; then
+	rm -rf gridmap
+fi
 mkdir gridmap
 netgenerate --grid \
 	--grid.length 100 \

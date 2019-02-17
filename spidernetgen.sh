@@ -4,6 +4,9 @@
 # @ author   Yuji Ogusu
 # @ date     2019/02/17
 
+if [ -d ./spidermap ]; then
+    rm -rf spidermap
+fi
 mkdir spidermap
 netgenerate --spider \
     --spider.arm-number 5 \

@@ -107,11 +107,14 @@ netgenerate has three types map.
 
 ## OpenStreatMap
 ```
-osmWebWizard.sh
+./osmWebWizard.sh
 ```
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/osmWebWizard.png" width="640">
 
-## MEMO
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/Tokyo.gif" width="1280">
+
+# MEMO
+## location
 map.net.xml
 ```
 ...
@@ -125,5 +128,53 @@ you use this number in plot\_net\_speed.py
 ...
  --xlim 0,60 --ylim 0,60 \
 ...
+```
+
+## unicode ERROR in osmWebWizard.py
+Python3 isnot difined unicode
+
+```
+calling route2trips
+Traceback (most recent call last):
+  File "/usr/share/sumo/tools/osmWebWizard.py", line 432, in build
+    builder.build()
+  File "/usr/share/sumo/tools/osmWebWizard.py", line 304, in build
+    (randomTripsPath, " ".join(map(quoted_str, self.getRelative(opts)))))
+  File "/usr/share/sumo/tools/osmWebWizard.py", line 164, in getRelative
+    if type(o) in [str, unicode] and o[0:l] == dirname:
+NameError: name 'unicode' is not defined
+```
+
+osmWebWizard.py
+```
+159     def getRelative(self, options):
+160         result = []
+161         dirname = self.tmp
+162         l = len(dirname)
+163         for o in options:
+164             if type(o) in [str, unicode] and o[0:l] == dirname:
+165                 remove = o[:l+1]
+166                 result.append(o.replace(remove, ''))
+167             else:
+168                 result.append(o)
+169         return result
+```
+
+```
+159     def getRelative(self, options):
+160         result = []
+161         dirname = self.tmp
+162         l = len(dirname)
+163         for o in options:
+164             try:
+165                 UNICODE_EXISTS = bool(type(unicode))
+166             except NameError:
+167                unicode = lambda s: str(s)
+168             if type(o) in [str, unicode] and o[0:l] == dirname:
+169                 remove = o[:l+1]
+170                 result.append(o.replace(remove, ''))
+171             else:
+172                 result.append(o)
+173         return result
 ```
 
