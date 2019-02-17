@@ -46,7 +46,6 @@ pip install rtree
 ```
 ./draw_net.py -n gridmap/map.net.xml
 ```
-<img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_gridmap.png" width="640">
 
 ## run simple simulation
 ```
@@ -61,19 +60,53 @@ pip install rtree
 ```
 
 # How to SUMO?
-## Prepare Map
+It is difficult to use SUMO, if you first try.
+
+There are 4 steps.
+
+## Index
+### 1. Prepare Map
+There are three method.
 * netgenerate
-* netedit
 * OpenStreatMap
-## Demand Modeling
+* netedit
+### 2. Demand Modeling
 * random Trips
-## Route generate
+### 3. Route generate
 * duarouter
-## Simulation
+### 4. Simulation
 * sumo
 * sumo-gui
+# 1. Prepare Map
+## netgenerate
+If you want to create simple map easy, you should use netgenerate.
 
-# MEMO
+netgenerate has three types map.
+
+* gridmap
+```
+./gridnetgen.sh
+./draw_net.py -n gridmap/map.net.xml
+```
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_gridmap.png" width="640">
+
+* spidermap
+```
+./spidernetgen.sh
+./draw_net.py -n spidermap/map.net.xml
+```
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_spidermap.png" width="640">
+
+* randommap
+```
+./randamnetgen.sh
+./draw_net.py -n randommap/map.net.xml
+```
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_randommap.png" width="640">
+
+## OpenStreatMap
+
+## MEMO
 map.net.xml
 ```
 ...
