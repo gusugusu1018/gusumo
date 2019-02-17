@@ -5,6 +5,9 @@
 * matplotlib
 * pyproj
 * rtree
+* overpy
+* folium
+* dill
 
 # Setup
 ## set environment value
@@ -37,6 +40,14 @@ sudo ldconfig
 # if you use python on system, you need `sudo -H` 
 pip install pyproj
 pip install rtree
+```
+
+## Install packages for check spot scripts
+
+```
+pip install overpy
+pip install folium
+pip install dill
 ```
 
 # How to SUMO?
@@ -125,7 +136,7 @@ You push Start button.
 
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/Tokyo.gif" width="1280">
 
-# My SUMO Tools
+# GUSUMO Tools
 ## Where is The Closest Edge?
 
 This is a tools to find closeset edge from longitude and latitude.  
@@ -146,6 +157,24 @@ net file        : osm/Tokyo/osm.net.xml
 closest edge    : <edge id="363564525#2" from="3677320551" to="3925244022"/>
 distance        : 18.126912151173638
 ```
+
+## Check Spot for Demand Modeling
+
+Check convenience store in erea.  
+Save *.pkl file.  
+
+```
+./check_spots/save_pkl.py
+```
+
+Check in browser.  
+
+```
+./check_spots/load_pkl.py
+firefox map.html
+```
+
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/check_spot.png" width="720">  
 
 # MEMO
 ## location
@@ -220,18 +249,6 @@ After
 173         return result
 ```
 
-## Overpy
-
-```
-pip install overpy
-```
-reference  
-* http://nao-y.hatenablog.com/entry/2018/04/26/181029
-
-## OpenStreatMap Tag infomation
-
-https://taginfo.openstreetmap.org/
-
 # Reference
 ## Sumo
 * https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki
@@ -246,9 +263,15 @@ https://taginfo.openstreetmap.org/
 ## OpenStreatMap
 * https://qiita.com/tags/openstreetmap
 
+## OpenStreatMap Tag infomation
+* https://taginfo.openstreetmap.org/
+
 ## Overpass
 * https://wiki.openstreetmap.org/wiki/Overpass_API/Installation
 * http://overpass-turbo.eu/
+* https://wiki.openstreetmap.org/wiki/JA:Overpass_API/%E8%A8%80%E8%AA%9E%E3%82%AC%E3%82%A4%E3%83%89
+
+* [New York fuel station](http://overpass-turbo.eu/s/GbE)
 
 ## Overpy
 * https://pypi.org/project/overpy/
@@ -258,8 +281,16 @@ https://taginfo.openstreetmap.org/
 * https://sumo.dlr.de/wiki/TraCI
 * https://sumo.dlr.de/wiki/TraCI/Interfacing_TraCI_from_Python
 
+## osmnx
+* https://geoffboeing.com/2016/11/osmnx-python-street-networks/
+* https://githubja.com/gboeing/osmnx
+
 ## Dataset
 * https://developer.wmata.com/
 
 ## Leaflet
 * https://leafletjs.com/
+
+## folium
+* https://qiita.com/momota10/items/3b878f01d489a32e40c3
+* https://blog.prototypr.io/interactive-maps-with-python-part-1-aa1563dbe5a9
