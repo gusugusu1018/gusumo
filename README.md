@@ -1,12 +1,23 @@
 # Environment
 * ubuntu16.04
 * sumo-1.1.0
+* python (higher than 2.7)
+* matplotlib
+* pyproj
+* rtree
 
 # Setup
+## set environment value
 if you use bash
 ```
 echo "export SUMO_HOME=/usr/share/sumo" >> ~/.bashrc
 source ~/.bashrc
+```
+
+## Install matplotlib
+```
+# if you use python on system, you need `sudo -H` 
+pip install matplotlib
 ```
 
 ## Install rtree and pyproj
@@ -20,8 +31,9 @@ cmake ..
 make -j 4
 sudo make install
 sudo ldconfig
-sudo -H pip install pyproj
-sudo -H pip install rtree
+# if you use python on system, you need `sudo -H` 
+pip install pyproj
+pip install rtree
 ```
 
 # How to use
@@ -30,6 +42,11 @@ sudo -H pip install rtree
 ./gridnetgen.sh
 ```
 
+## draw net
+```
+./draw_net.py -n gridmap/map.net.xml
+```
+![draw_gridmap](https://github.com/minaminoki/gusumo/tree/master/img/draw_gridmap.png "gridmap")
 ## run simple simulation
 ```
 ./runner.py gridmap
