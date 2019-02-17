@@ -9,6 +9,21 @@ echo "export SUMO_HOME=/usr/share/sumo" >> ~/.bashrc
 source ~/.bashrc
 ```
 
+## Install rtree and pyproj
+rtree need spatialindex
+```
+wget http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz
+cd spatialindex-src-1.8.5
+mkdir build
+cd build
+cmake ..
+make -j 4
+sudo make install
+sudo ldconfig
+sudo -H pip install pyproj
+sudo -H pip install rtree
+```
+
 # How to use
 ## make grid map
 ```
@@ -27,6 +42,19 @@ source ~/.bashrc
 ./plot_net_speed.sh
 ```
 
+# How to SUMO?
+## Prepare Map
+* netgenerate
+* netedit
+* OpenStreatMap
+## Demand Modeling
+* random Trips
+## Route generate
+* duarouter
+## Simulation
+* sumo
+* sumo-gui
+
 # MEMO
 map.net.xml
 ```
@@ -42,3 +70,4 @@ you use this number in plot\_net\_speed.py
  --xlim 0,60 --ylim 0,60 \
 ...
 ```
+
