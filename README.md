@@ -9,12 +9,14 @@
 # Setup
 ## set environment value
 if you use bash
+
 ```
 echo "export SUMO_HOME=/usr/share/sumo" >> ~/.bashrc
 source ~/.bashrc
 ```
 
 ## Install matplotlib
+
 ```
 # if you use python on system, you need `sudo -H` 
 pip install matplotlib
@@ -22,6 +24,7 @@ pip install matplotlib
 
 ## Install rtree and pyproj
 rtree need spatialindex
+
 ```
 wget http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz
 cd spatialindex-src-1.8.5
@@ -38,16 +41,19 @@ pip install rtree
 
 # How to use
 ## make grid map
+
 ```
 ./gridnetgen.sh
 ```
 
 ## draw net
+
 ```
 ./draw_net.py -n gridmap/map.net.xml
 ```
 
 ## run simple simulation
+
 ```
 ./runner.py gridmap
 # or
@@ -55,6 +61,7 @@ pip install rtree
 ```
 
 ## plot net speed
+
 ```
 ./plot_net_speed.sh
 ```
@@ -64,66 +71,101 @@ It is difficult to use SUMO, if you first try.
 
 There are 3 steps.
 
-## Index
-### 1. Prepare Map
+## 1. Prepare Map
 There are three method.
 * netgenerate
 * OpenStreatMap
 * netedit
-### 2. Demand Modeling
-#### create trips
+## 2. Demand Modeling
+### create trips
 * random Trips
-#### Route generate
+### Route generate
 * duarouter
-### 3. Simulation
+## 3. Simulation
 * sumo
 * sumo-gui
-# 1. Prepare Map
-## netgenerate
+
+# Simple map simulation
+## prepare map
 If you want to create simple map easy, you should use netgenerate.
 
 netgenerate has three types map.
 
 * gridmap
+
 ```
 ./gridnetgen.sh
 ./draw_net.py -n gridmap/map.net.xml
 ```
+
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_gridmap.png" width="640">
 
 * spidermap
+
 ```
 ./spidernetgen.sh
 ./draw_net.py -n spidermap/map.net.xml
 ```
+
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_spidermap.png" width="640">
 
 * randommap
+
 ```
 ./randamnetgen.sh
 ./draw_net.py -n randommap/map.net.xml
 ```
+
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/draw_randommap.png" width="640">
 
-## OpenStreatMap
+## demand modeling and run
+
+```
+./runner.py gridmap
+```
+
+This script include randomTrips and duarouter and sumo-gui.
+
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/gridmap.gif" width="640">
+
+# Real map simulation
+If you want to use real map, you should use a osmWebWizard tool.
+
 ```
 ./osmWebWizard.sh
 ```
+
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/osmWebWizard.png" width="640">
+
+You set a your favarite location.
+I set "Tokyo".
+
+Push car icon, then push like this.
+
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/traffic_setting.png" width="320">
+
+Also push Generate Scenario.
+It takes a few minutes.
+If this successed, appear sumo-gui.
+
+You push Start button.
 
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/Tokyo.gif" width="1280">
 
 # MEMO
 ## location
 map.net.xml
+
 ```
 ...
     <location netOffset="0.00,0.00" convBoundary="0.00,0.00,60.00,60.00" origBoundary="0.00,0.00,60.00,60.00" projParameter="!"/>
 ...
 ```
+
 convBoundary is important
 
 you use this number in plot\_net\_speed.py
+
 ```
 ...
  --xlim 0,60 --ylim 0,60 \
