@@ -126,16 +126,17 @@ You push Start button.
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/Tokyo.gif" width="1280">
 
 # My SUMO Tools
-## Where is Closest Edge?
+## Where is The Closest Edge?
 
-This is a tools to find closeset edge from longitude and latitude
+This is a tools to find closeset edge from longitude and latitude.  
+
 ```
 ./getNeighboringEdges.py -n osm/Tokyo/osm.net.xml --lon 139.765 --lat 35.68
 ```
 
-Red point is a point you set (lon lat)  
-Blue edge is a closest edge line  
-<img src="https://github.com/minaminoki/gusumo/blob/master/img/closestEdge.png" width="640">  
+Red point is a point you set (lon lat).  
+Blue edge is a closest edge line.  
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/closestEdge.png" width="720">  
 Console output closest edge and distance
 
 ```
@@ -218,3 +219,47 @@ After
 172                 result.append(o)
 173         return result
 ```
+
+## Overpy
+
+```
+pip install overpy
+```
+reference  
+* http://nao-y.hatenablog.com/entry/2018/04/26/181029
+
+## OpenStreatMap Tag infomation
+
+https://taginfo.openstreetmap.org/
+
+# Reference
+## Sumo
+* https://sumo.dlr.de/wiki/Simulation_of_Urban_MObility_-_Wiki
+
+## Sumo Tools Visualization
+* https://sumo.dlr.de/wiki/Tools/Visualization
+
+## Sumolib
+* https://sumo.dlr.de/wiki/Tools/Sumolib
+* https://sumo.dlr.de/pydoc/sumolib.net.html
+
+## OpenStreatMap
+* https://qiita.com/tags/openstreetmap
+
+## Overpass
+* https://wiki.openstreetmap.org/wiki/Overpass_API/Installation
+* http://overpass-turbo.eu/
+
+## Overpy
+* https://pypi.org/project/overpy/
+* http://nao-y.hatenablog.com/entry/2018/04/26/181029
+
+## TraCI
+* https://sumo.dlr.de/wiki/TraCI
+* https://sumo.dlr.de/wiki/TraCI/Interfacing_TraCI_from_Python
+
+## Dataset
+* https://developer.wmata.com/
+
+## Leaflet
+* https://leafletjs.com/
