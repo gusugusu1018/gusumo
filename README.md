@@ -128,12 +128,23 @@ You push Start button.
 # My SUMO Tools
 ## Where is Closest Edge?
 
-tools to find closeset edge from longitude and latitude
+This is a tools to find closeset edge from longitude and latitude
 ```
 ./getNeighboringEdges.py -n osm/Tokyo/osm.net.xml --lon 139.765 --lat 35.68
 ```
 
-<img src="https://github.com/minaminoki/gusumo/blob/master/img/closestEdge.png" width="640">
+Red point is a point you set (lon lat)  
+Blue edge is a closest edge line  
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/closestEdge.png" width="640">  
+Console output closest edge and distance
+
+```
+net file        : osm/Tokyo/osm.net.xml
+(lon,lat)       : (139.765, 35.68)
+(x,y)           : (8618.109951582097, 3573.570724199526)
+closest edge    : <edge id="363564525#2" from="3677320551" to="3925244022"/>
+distance        : 18.126912151173638
+```
 
 # MEMO
 ## location

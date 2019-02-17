@@ -34,8 +34,8 @@ def main(args=None):
                          default='k', help="Defines the edge color")
     optParser.add_option("-v", "--verbose", dest="verbose", action="store_true",
                          default=False, help="If set, the script says what it's doing")
-    optParser.add_option("--lon", dest="longitude", type="float", default=139.76834)
-    optParser.add_option("--lat", dest="latitude", type="float", default=35.68078)
+    optParser.add_option("--lon", dest="longitude", type="float")
+    optParser.add_option("--lat", dest="latitude", type="float")
     ## standard plot options
     helpers.addInteractionOptions(optParser)
     helpers.addPlotOptions(optParser)
@@ -45,10 +45,20 @@ def main(args=None):
     BASE_PATH = os.path.dirname(os.path.abspath(__file__))
     if options.net is None:
         print("Error: a network to load must be given.")
+        print("Please set -n [NET_FILE] or --net [NET_FILE] ")
         return 1
     if options.verbose:
         print("Reading network from '%s'" % options.net)
     NET_FILE = options.net
+    if options.longitude is None:
+        print("Error: Point must be given.")
+        print("Please set --lon [LONGITUDE] --lat [LATITUDE]")
+        return 1
+    if options.latitude is None:
+        print("Error: Point must be given.")
+        print("Please set --lon [LONGITUDE] --lat [LATITUDE]")
+        return 1
+
     ## Show infomation
     print('script          : '+__file__)
     print('base            : '+BASE_PATH)
