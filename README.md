@@ -39,33 +39,6 @@ pip install pyproj
 pip install rtree
 ```
 
-# How to use
-## make grid map
-
-```
-./gridnetgen.sh
-```
-
-## draw net
-
-```
-./draw_net.py -n gridmap/map.net.xml
-```
-
-## run simple simulation
-
-```
-./runner.py gridmap
-# or
-./runner.sh gridmap
-```
-
-## plot net speed
-
-```
-./plot_net_speed.sh
-```
-
 # How to SUMO?
 It is difficult to use SUMO, if you first try.
 
@@ -142,7 +115,7 @@ I set "Tokyo".
 
 Push car icon, then push like this.
 
-<img src="https://github.com/minaminoki/gusumo/blob/master/img/traffic_setting.png" width="320">
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/traffic_setting.png" width="270">
 
 Also push Generate Scenario.
 It takes a few minutes.
@@ -151,6 +124,16 @@ If this successed, appear sumo-gui.
 You push Start button.
 
 <img src="https://github.com/minaminoki/gusumo/blob/master/img/Tokyo.gif" width="1280">
+
+# My SUMO Tools
+## Where is Closest Edge?
+
+tools to find closeset edge from longitude and latitude
+```
+./getNeighboringEdges.py -n osm/Tokyo/osm.net.xml --lon 139.765 --lat 35.68
+```
+
+<img src="https://github.com/minaminoki/gusumo/blob/master/img/closestEdge.png" width="640">
 
 # MEMO
 ## location
@@ -162,7 +145,7 @@ map.net.xml
 ...
 ```
 
-convBoundary is important
+convBoundary is important.
 
 you use this number in plot\_net\_speed.py
 
@@ -173,7 +156,7 @@ you use this number in plot\_net\_speed.py
 ```
 
 ## unicode ERROR in osmWebWizard.py
-Python3 isnot difined unicode
+Python3 is not difined unicode.
 
 ```
 calling route2trips
@@ -187,6 +170,9 @@ Traceback (most recent call last):
 NameError: name 'unicode' is not defined
 ```
 
+So you need repair this error.
+
+Before  
 osmWebWizard.py
 ```
 159     def getRelative(self, options):
@@ -201,6 +187,8 @@ osmWebWizard.py
 168                 result.append(o)
 169         return result
 ```
+
+After  
 
 ```
 159     def getRelative(self, options):
@@ -219,4 +207,3 @@ osmWebWizard.py
 172                 result.append(o)
 173         return result
 ```
-
