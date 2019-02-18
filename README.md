@@ -276,6 +276,7 @@ After
 ## Overpy
 * https://pypi.org/project/overpy/
 * http://nao-y.hatenablog.com/entry/2018/04/26/181029
+* https://python-overpy.readthedocs.io/en/latest/example.html
 
 ## TraCI
 * https://sumo.dlr.de/wiki/TraCI
@@ -294,3 +295,5 @@ After
 ## folium
 * https://qiita.com/momota10/items/3b878f01d489a32e40c3
 * https://blog.prototypr.io/interactive-maps-with-python-part-1-aa1563dbe5a9
+* https://python-visualization.github.io/folium/docs-v0.6.0/quickstart.html
+* http://sinhrks.hatenablog.com/entry/2015/12/26/231000
